@@ -1,0 +1,1 @@
+These are projects I'm currently working on or have worked on recently. If you only have time to look at a few of them, I'm particularly proud of the Java Program Simple Budget, and the Automation folder will of course be the most relevant.

@@ -1,0 +1,26 @@
+{
+  "name": "wdio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "trelloPageObject.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "webdriverio": "^4.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jared-chapman/wdio-tests.git"
+  },
+  "author": "Jared Chapman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jared-chapman/wdio-tests/issues"
+  },
+  "homepage": "https://github.com/jared-chapman/wdio-tests#readme"
+}
