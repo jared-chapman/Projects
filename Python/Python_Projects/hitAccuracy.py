@@ -3,7 +3,7 @@ This is a simple program for measuring how many times Mayweather knocks McGregor
 Did you know they were fighting today? You'd think people would be talking about
 a fight this big but I've barely heard anything. Weird.
 
-Anyway it's really just an checking out global variables and classes. I've read
+Anyway it's really just an exercise in checking out global variables and classes. I've read
 to avoid global variables for the sake of clarity, but I'm not sure how to do
 that here and have the same effect. Am I being too java-y? Maybe (Hopefully)
 future Jared will know the answer.

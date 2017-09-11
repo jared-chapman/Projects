@@ -1,0 +1,29 @@
+#Here we want to create a list of dictionaries. Each item in the list is a
+#Dictionary representing an ability and its stats
+
+abilities = [{"createItem": 0,
+              "basassness": 1,
+              "targets": 1,
+              "range": 1,
+              "healing": 0,
+              "damage": 3,
+              "name": "Fireball"},
+             {"createItem": 0,
+              "basassness": 2,
+              "targets": 2,
+              "range": 2,
+              "healing": 1,
+              "damage": 4,
+              "name": "Iceball"}]
+
+print(abilities[len(abilities)-1]["name"])
+
+abilities.append({"createItem": 0,
+ "basassness": 2,
+ "targets": 2,
+ "range": 2,
+ "healing": 1,
+ "damage": 4,
+ "name": "Lighteningball"})
+
+ print(abilities[len(abilities)-1]["name"])
