@@ -49,22 +49,21 @@ public class Control {
 	
 	//Add an Entry to a Tracker's Entry ArrayList
 	public void addToTracker(){								
-		String date = dateObj.toString();																			//Get the date to add to the Entry
-		Scanner sc = new Scanner(System.in);																		//Setup scanner
+		String date = dateObj.toString();																			//Get the date to add to the Entry																	//Setup scanner
 		System.out.println("How much did you spend?");																//Asks user how much they spent
 		int amountToAdd = 0;																						//Declare int amountToAdd so it's in the correct scope
-		while (amountToAdd == 0){																					//Basically, do this until amountToAdd changes
-			try {  amountToAdd = Integer.parseInt(sc.nextLine());													//Check that input is an int
-			} catch(NumberFormatException e){ 
-				System.out.println("please enter a number");														//And if it isn't, try again
-			}
-		}
+		amountToAdd = validateDollarAmount(amountToAdd, "Please enter a Number");									//Gets user input, validates that it is an int, and returns it
 		Trackers chosenTracker = chooseTracker();																	//Call chooseTracker() and choose a tracker
 		System.out.println("Note:  (Enter to skip)");																//Get input
+		Scanner sc = new Scanner(System.in);
 		String noteToAdd = sc.nextLine();																			//Add input to noteToAdd
 		chosenTracker.addToTotal(amountToAdd, date, noteToAdd);														//Call addToTotal on chosenTracker, which is what actually creates the entry
 		chosenTracker.displayStats();																				//Display the stats
 	}
+	
+	
+	
+	
 
 	//Undo last Entry
 	public void undo(){
@@ -110,17 +109,10 @@ public class Control {
 			if(name.equals("")){
 				System.out.println("Please enter a name");
 			}
-			
 		}
 		System.out.println("What is your budget?");
 		int budget = 0;
-		while (budget == 0){
-			try {  budget = Integer.parseInt(sc.nextLine());
-			} catch(NumberFormatException e){ 
-				System.out.println("please enter a number");
-			}
-		}
-		
+		budget = validateDollarAmount(budget, "Please enter a number");	
 		trackerList.add(new Trackers(name, budget, "White"));
 	}
 	
@@ -204,6 +196,23 @@ public class Control {
 		}		
 		return (Trackers) trackerList.get(chosenTracker);							//If input is a valid number, return the proper Tracker object
 	}
+ 	
+ 	
+ 	
+ 	
+ 	public int validateDollarAmount(int toValidate, String errorMessage) {
+		Scanner sc = new Scanner(System.in);
+		while (toValidate == 0){																					//Basically, do this until amountToAdd changes
+			try {  toValidate = Integer.parseInt(sc.nextLine());													//Check that input is an int
+			} catch(NumberFormatException e){ 
+				System.out.println(errorMessage);																	//And if it isn't, try again
+			}
+		}
+		return toValidate;
+	}
+	
+ 	
+ 	
  	
 
 }

@@ -8,6 +8,7 @@ call them for reference.
 
 import pickle
 import os
+from tabulate import tabulate
 
 
 #Here we want to create a list of dictionaries. Each item in the list is a
@@ -114,5 +115,13 @@ def inputAbility():
         with open('abilityData.pk1', 'wb') as output:                           #Pickles Ability
             pickle.dump(abilities, output, pickle.HIGHEST_PROTOCOL)
 
+def showAbilities():
+    """
+    Prints a table showing all abilities and their stats
+    """
+    _headers = ['name', 'damage', 'healing', 'range', 'targets', 'badassness', 'createItem']
+    print(tabulate(abilities, headers = _headers))
+
+
+showAbilities()
 inputAbility()
-print(abilities[len(abilities)-1]["name"])

@@ -6,8 +6,11 @@ import random
 
 
 #Rolls a D(x) die
-def D(die):
-    return random.randint(1, die)
+def D(number, die):
+    result = 0
+    for i in range(number):
+        result += random.randint(1,die)
+    return result
 
 #Pass in a list[number of dice to be rolled, size of dice and get their roll
 def modify(modifier):
@@ -36,10 +39,30 @@ def average(difficulty, loopCount, modifier=[0,0]):
     percentage = (successes/loopCount)*100
     return percentage
 
-
-
-print(average(10, 10000, [5,6]))
-
-
-print(D(6))
-print(modify([3,6]))
+def stats():
+    one = 0
+    two = 0
+    three = 0
+    four = 0
+    five = 0
+    six = 0
+    for i in range(10000):
+        _roll = D(1,6)
+        if _roll == 1:
+            one+=1
+        if _roll == 2:
+            two+=1
+        if _roll == 3:
+            three+=1
+        if _roll == 4:
+            four+=1
+        if _roll == 5:
+            five+=1
+        if _roll == 6:
+            six+=1
+    print(one)
+    print(two)
+    print(three)
+    print(four)
+    print(five)
+    print(six)
